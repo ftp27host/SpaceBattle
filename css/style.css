@@ -1,4 +1,9 @@
-﻿canvas {
+﻿@font-face {
+font-family: PixelEmulator;
+src: url("Pixel Emulator.otf") format("opentype");
+}
+
+canvas {
     width:600px;
     height:600px;
     margin: 0 auto;
@@ -7,6 +12,7 @@
 }
 
 body{
+	font-family: PixelEmulator, Sans-Serif;
     background-color:black;
 }
 

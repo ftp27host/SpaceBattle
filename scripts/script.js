@@ -126,7 +126,8 @@ function drawAll() {
         };
 
         ctx.fillStyle = "red";
-        ctx.fillText("SCORES: " + scores, 500, 10);
+		ctx.font = '20pt PixelEmulator';
+        ctx.fillText("SCORE: " + scores, 10, 25);
         //перемещение врагов и пуль, удаление
         ChangeEnemies();
         ChangeBullets();
@@ -141,8 +142,8 @@ function drawAll() {
         ctx.fillStyle = "red";
         ctx.fillRect(0, 0, canvas.width, canvas.height);
         ctx.fillStyle = "black";
-        ctx.fillText("GAME OVER!", 250, 250);
-        ctx.fillText("YOUR SCORE: " + scores, 250, 300);
+        ctx.fillText("GAME OVER!", 200, 250);
+        ctx.fillText("YOUR SCORE: " + scores, 200, 300);
     };
 };
 
