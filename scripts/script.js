@@ -9,7 +9,9 @@ var HeroX = 20,
     BoardH = 600,
     speedBullet = 2,
     scores,
+	fontHeight = 20,
     level = 2; //Чем больше число тем проще (минимум 1)
+	
 var hero,
     enemy,
     boom,
@@ -126,8 +128,8 @@ function drawAll() {
         };
 
         ctx.fillStyle = "red";
-		ctx.font = '20pt PixelEmulator';
-        ctx.fillText("SCORE: " + scores, 10, 25);
+		ctx.font = fontHeight+'pt PixelEmulator';
+        ctx.fillText("SCORE: " + scores, 10, fontHeight+5);
         //перемещение врагов и пуль, удаление
         ChangeEnemies();
         ChangeBullets();
@@ -142,8 +144,8 @@ function drawAll() {
         ctx.fillStyle = "red";
         ctx.fillRect(0, 0, canvas.width, canvas.height);
         ctx.fillStyle = "black";
-        ctx.fillText("GAME OVER!", 200, 250);
-        ctx.fillText("YOUR SCORE: " + scores, 200, 300);
+        ctx.fillText("GAME OVER!", BoardW/3, BoardH/2);
+        ctx.fillText("YOUR SCORE: " + scores, BoardW/3, 2*fontHeight+BoardH/3);
     };
 };
 
@@ -151,7 +153,7 @@ function drawAll() {
 function GenerateEnemies() {
     var obj = {};
     obj.EnemyY = parseInt((Math.random() * (575 - 0 + 1)), 10);
-    obj.EnemyX = 570;
+    obj.EnemyX = BoardW-EnemyW;
     EnemyArr.push(obj);
 };
 
@@ -165,7 +167,7 @@ function ChangeEnemies() {
 //генерация бонусов
 function GenerateBonus() {
     var BonusY = parseInt((Math.random() * (575 - 0 + 1)), 10);
-    var BonusX = 570;
+    var BonusX = BoardW-EnemyW;
     BonusArr = [BonusX,BonusY];
 };
 
