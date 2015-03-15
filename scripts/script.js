@@ -130,6 +130,8 @@ function drawAll() {
         ctx.fillStyle = "red";
 		ctx.font = fontHeight+'pt PixelEmulator';
         ctx.fillText("SCORE: " + scores, 10, fontHeight+5);
+		ctx.fillText("↑/↓   - Moving", BoardW-300, fontHeight+5);
+		ctx.fillText("SPACE - Fire", BoardW-300, 2*(fontHeight+5));
         //перемещение врагов и пуль, удаление
         ChangeEnemies();
         ChangeBullets();
